@@ -1,0 +1,966 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style-type: none;
+    cursor: pointer;
+}
+
+em{
+    font-style: normal;
+}
+
+div{
+    display: block;
+}
+
+/*主容器样式*/
+.container{
+    min-width: 940px;
+    height: 100%;
+}
+/*页面头部样式*/
+.header{
+    min-width: 1000px;
+    height: 34px;
+    position: relative;
+    z-index: 200;
+    border-bottom: 1px solid #ebebeb;
+}
+/*天气部分*/
+.headerWeather{
+    float: left;
+    line-height: 20px;
+    font-size: 12px;
+    color: #555;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.headerWeather a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.headerWeather span{
+    margin-right: 7px;
+    line-height: 35px;
+}
+
+.headerWeather span em{
+    font-style: normal;
+    color: #badc00 !important;
+    font-weight: bold;
+}
+
+.headerWeather .weatherIcon{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    background: url('../images/sunshine.png');
+}
+
+.headerMessage{
+    float: left;
+}
+
+.headerMessage a{
+    color: #333;
+    text-decoration: underline;
+    margin-right: 13px;
+    outline: none;
+    display: inline-block;
+    position: relative;
+    line-height: 35px;
+    text-align: left;
+    font-size: 13px !important;
+}
+/*页面头部菜单导航*/
+.headerNav{
+    float: right;
+    padding-right: 12px;
+}
+
+.headerNav a{
+    float: left;
+    color: #333;
+    line-height: 35px;
+    height: 34px;
+    margin-left: 20px;
+    font-size: 13px;
+    white-space: nowrap;
+    text-decoration: underline;
+}
+
+.headerNav .normolNav{
+    font-weight: bolder;
+}
+
+.headerNav .normolNav:hover{
+    color: #0079f5;
+}
+/*更多产品按钮*/
+.headerNav .moreNav{
+    position: relative;
+    top: 5px;
+    /*right: 10px;*/
+    width: 60px;
+    height: 22px;
+    color: white;
+    background: #38f;
+    line-height: 23px;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    border-bottom: 1px solid #38f;
+    margin: 0 2px 0 19px;
+}
+/*更多产品下拉菜单样式*/
+.moreNavMenu{
+    width: 85px;
+    min-height: 650px;
+    display: none;
+    background: #f9f9f9;
+    position: absolute;
+    text-align: center;
+    color: #666;
+    top: -2px;
+    right: 0;
+    border: 1px solid #e7e7e7;
+    z-index: 2;
+    font-size: 12px;
+}
+
+.moreNavMenu a{
+    display: block;
+    width: 66px;
+    height: 76px;
+    color: inherit;
+    margin: 0 auto;
+    border-bottom: #f0f0f0 1px solid;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.moreNavMenu a:hover{
+    text-decoration: underline;
+}
+
+.moreNavMenu a img{
+    width: 36px;
+    height: 36px;
+    display: block;
+    margin: 10px auto 5px;
+    cursor: pointer;
+    border: 0;
+}
+
+.moreNavMenu span{
+    display: block;
+    color: #333;
+    text-align: center;
+    width: 66px;
+    height: 30px;
+    line-height: 35px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    border-bottom: #f0f0f0 1px solid;
+    font-size: 13px;
+}
+
+.moreNavMenu .allProduct{
+    margin-top: 25px;
+    color: inherit;
+}
+/*登陆和设置下拉菜单样式*/
+.loginMenu{
+    display: none;
+    width: 70px;
+    /*top: 28px !important;*/
+    z-index: 100;
+    text-align: left;
+    position: absolute;
+    border: 1px solid #E3E3E3;
+    border-top: 0;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 5px #d1d1d1;
+    font-size: 12px;
+    padding-top: 6px;
+}
+
+.loginMenu .s1{
+    position: absolute;
+    z-index: 1000;
+    top: -11px;
+    left: 28px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border: 5px dashed transparent;
+    border-bottom: 5px solid #e3e3e3;
+    font-size: 0;
+}
+
+.loginMenu .s2{
+    position: absolute;
+    z-index: 1000;
+    top: -9px;
+    left: 28px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border: 5px dashed transparent;
+    border-bottom: 5px solid #FFFFFF;
+    font-size: 0;
+}
+
+.loginMenu a{
+    text-decoration: none;
+    height: 25px;
+    line-height: 27px;
+    padding-left: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: left;
+    display: block;
+    color: #333;
+}
+
+.loginMenu a:hover{
+    background: #38F;
+    color: #FFF;
+}
+/*页面内容主体*/
+.article{
+    width: 740px;
+    padding-top: 36px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.article img{
+    width: 270px;
+    height: 129px;
+    margin: 12px 0 5px 0;
+    border: 0;
+}
+/*搜索区域样式*/
+.article .search{
+    margin: 0 auto;
+    width: 640px;
+}
+
+.article .searchInput{
+    width: 521px;
+    height: 20px;
+    padding: 9px 7px;
+    font: 16px arial;
+    border: 1px solid #d8d8d8;
+    vertical-align: top;
+    outline: none;
+    float: left;
+}
+
+.article .searchInput:focus{
+    border-color: #38f;
+}
+
+.article .searchBtn{
+    cursor: pointer;
+    width: 102px;
+    height: 40px;
+    line-height: 38px;
+    border: 0;
+    background-color: #38f;
+    font-size: 16px;
+    color: white;
+    margin-left: -5px;
+    position: relative;
+    display: inline-block;
+}
+
+.article .searchBtn:hover{
+    background-color: #2574E8;
+}
+/*页面主体内容容器*/
+.wrap{
+    min-width: 940px;
+    margin-top: 45px;
+}
+
+.wrapInner{
+    width: 910px;
+    height: 320px;
+    margin: 0 auto;
+}
+
+.wrapMenus{
+    width: 80px;
+    height: 318px;
+    float: left;
+    color: #969494;
+    background: #e9eaea;
+}
+
+.wrapMenus a{
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 35px;
+    line-height: 34px;
+    font-size: 14px;
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+}
+
+.wrapMenus a:hover{
+    background: #b3b6bb;
+    color: #FFF;
+}
+/*左侧菜单栏*/
+.wrapMenusDemo{
+    color: #FFF;
+    filter: none;
+    font-weight: bold;
+    background: url("../images/s_menu.png") no-repeat;
+}
+
+.wrapMenus .setting{
+    bottom: 0;
+    position: absolute;
+}
+
+.wrapMenus .setting span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 6px;
+    left: 30px;
+    background: url("../images/noskin_bg.png") no-repeat -22px 0;
+}
+
+.wrapMenusSettingBg{
+    background-position: 0 0;
+}
+/*右侧承载内容div*/
+.wrapContents{
+    width: 813px;
+    height: 314px;
+    float: right;
+    border:1px solid #e9eaea;
+    overflow: hidden;
+}
+/*页面脚注*/
+.footer{
+    margin: 8px auto;
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+    color: #CCC;
+}
+
+.footer *{
+    text-decoration: none;
+    word-spacing: 3px;
+    color: #CCC;
+    margin-right: 12px;
+}
+
+.footer img{
+    width: 13px;
+    height: 16px;
+    position: relative;
+    margin: -5px 0 0 -5px;
+}
+
+.containerOn{
+    display: block;
+}
+
+
+/*！！！！！！！！！！1 nav div 布局样式 ！！！！！！！！！！*/
+
+.container1{
+    width: 813px;
+    height: 320px;
+    border: 0;
+    display: none;
+}
+
+.container1 div{
+    box-sizing: border-box;
+}
+
+/*头部容器样式*/
+.header1{
+    text-align: center;
+    height: 44px;
+    border-bottom: 1px solid #E9e9e9;
+    font-size: 14px;
+    line-height: 44px;
+    word-spacing: 25px;
+}
+
+.header1 a{
+    color: #222;
+    width: 86px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.tabOn{
+    font-weight: bold;
+    border-bottom: 2px solid #42A0FE;
+}
+/*页面主题内容样式*/
+.article0{
+    display: none;
+    width: 811px;
+    height: 273px;
+    margin: 0 auto;
+    padding-left: 10px;
+}
+
+.article1 a{
+    width: 158px;
+    height: 40px;
+    display: block;
+    text-decoration: none;
+    color: #222;
+    line-height: 28px;
+    font-size: 14px;
+    float: left;
+    padding: 5px 22px 20px 11px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.article1 a:hover{
+    background: #EFEFEF;
+}
+
+.article1 img{
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+    margin: 6px 5px 0 0;
+}
+/*标题选项*/
+.articleTitle{
+    padding: 19px 7px 0 0;
+    width: 20px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 16px;
+    color: #999;
+    height: 81px;
+    float: left;
+}
+/*内容主体*/
+.articleBody{
+    width: 764px;
+    height: 251px;
+    padding-top: 15px;
+    float: left;
+}
+
+.articleBody img{
+    width: 115px;
+    height: 70px;
+    border: 2px solid #F8F8F8;
+}
+
+.articleBody img:hover{
+    border: 2px solid #42A0FE;
+    cursor: pointer;
+}
+
+.article2 a{
+    width: 117px;
+    height: 72px;
+    margin: 0 8px 14px 0;
+    background: #F8F8F8;
+    display: block;
+    float: left;
+}
+
+.contentOn1{
+    display: block;
+}
+
+.contentOn{
+    display: block !important;
+}
+
+/*！！！！！！！！！！2 news div 布局样式 ！！！！！！！！！！*/
+
+/*左边轮播图盒子样式*/
+.imgBox{
+    width: 425px;
+    height: 318px;
+    overflow: hidden;
+    float: left;
+}
+
+.imgBox .imgPic{
+    width: 425px;
+    height: 260px;
+    cursor: pointer;
+}
+
+.imgBox .imgNav{
+    width: 425px;
+    height: 58px;
+    position: relative;
+    white-space: nowrap;
+    word-spacing: 10px;
+    overflow: hidden;
+    padding: 8px 0 0 15px;
+    background-color: #191919;
+}
+
+.imgNav img{
+    display: inline-block;
+    border: 1px solid #191919;
+    height: 40px;
+    width: 68px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.imgOn{
+    border: 1px solid #389cff !important;
+    opacity: 1 !important;
+}
+/*右边内容盒子样式*/
+.contentBox{
+    width: 386px;
+    height: 318px;
+    padding: 0 30px 0 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.contentBox a{
+    font-size: 14px;
+    line-height: 16px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.contentBox .title{
+    width: 108px;
+    height: 40px;
+    padding-top: 15px;
+    color: #000;
+    border-bottom: 2px solid #389cff;
+}
+
+.contentBox .title img{
+    width: 16px;
+    height: 16px;
+}
+
+.contentBox .newsNav{
+    border-top: 1px solid #e9e9e9;
+}
+
+.newsNav li{
+    position: relative;
+    width: 140px;
+    height: 32px;
+    line-height: 30px;
+    color: #222;
+    list-style: square;
+    float: left;
+    margin-left: 20px;
+    white-space: nowrap;
+}
+
+.newsNav li a:hover{
+    text-decoration: underline;
+}
+
+/*！！！！！！！！！！3 music div 布局样式 ！！！！！！！！！！*/
+.container1 ul{
+    list-style: none;
+    clear: both;
+    position: relative;
+    top: 15px;
+}
+
+.imgBox3{
+    float: left;
+    width: 167px;
+    height: 316px;
+    background: white;
+    padding: 19px 22px 0 24px;
+}
+
+.imgBox3 img{
+    width: 119px;
+    height: 119px;
+    display: block;
+    border-radius: 50%;
+
+}
+/*主要内容盒子样式*/
+.contentBox3{
+    float: left;
+    height: 316px;
+    width: 406px;
+    padding-top: 19px;
+}
+
+.contentBox3 a{
+    display: block;
+    float: left;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contentBox3 .middle{
+    float: left;
+    font-size: 12px;
+    margin-top: 6px;
+    width: 360px;
+    height: 33px;
+    line-height: 33px;
+    color: #666;
+}
+
+.contentBox3 .volume{
+    float: left;
+    display: block;
+    overflow: hidden;
+    width: 18px;
+    height: 15px;
+    background: url('../images/music.png') no-repeat 0 -182px;
+    margin: 8px;
+}
+
+.contentBox3 .download{
+    background: url('../images/music.png') no-repeat -384px -218px;
+    width: 54px;
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    margin-top: 6px;
+    display: block;
+    border: 1px solid #dbdbdb;
+}
+
+.contentBox3 li{
+    float: left;
+    display: block;
+    margin-right: 11px;
+}
+
+.contentBox3 li a{
+    display: block;
+    width: 34px;
+    height: 36px;
+    background: url('../images/music.png') no-repeat;
+}
+
+.contentBox3 .a1{
+    background-position: -3px -110px;
+}
+
+.contentBox3 .a2{
+    background-position: -39px -110px;
+}
+
+.contentBox3 .a3{
+    background-position: -75px -146px;
+}
+
+.contentBox3 .a4{
+    background-position: -111px -146px;
+}
+
+.contentBox3 .name{
+    line-height: 27px;
+    font-size: 20px;
+}
+
+.contentBox3 .author{
+    font-size: 14px;
+    line-height: 33px;
+    margin-left: 10px;
+}
+
+.contentBox3 .process-bar{
+    margin: 22px 5px 0 0;
+    width: 229px;
+    height: 4px;
+    background-color: #cecfd4;
+    position: relative;
+    float: left;
+    overflow: hidden;
+}
+
+.textBox{
+    position: relative;
+    height: 130px;
+    width: 360px;
+    font-size: 14px;
+    margin-top: 70px;
+    overflow-y: scroll;
+    border-top: 1px solid #E9E9E9;
+    border-right: 7px solid #f2f2f2;
+    border-left: 0;
+    border-bottom: 0;
+    line-height: 24px;
+    text-align: left;
+    color: #222;
+}
+
+.listBox{
+    float: left;
+    width: 237px;
+    margin-top: 24px;
+    height: 262px;
+    border-left: 1px solid #E9E9E9;
+}
+
+.listBox span{
+    padding:0 0 9px 40px;
+    width: 200px;
+    font-size: 18px;
+    color: #222;
+    height: 30px;
+    line-height: 24px;
+    float: left;
+}
+
+.listBox a{
+    width: 90px;
+    display: block;
+    float: left;
+    height: 30px;
+    text-indent: 25px;
+    line-height: 30px;
+    text-align: left;
+    font-size: 14px;
+    text-decoration: none;
+    color: #222;
+}
+
+.listBox a:hover{
+    color: #0079f5;
+}
+/*选中菜单显示样式*/
+.listOn{
+    color: #FFFFFF !important;
+    background: #389cff url('../images/baidu_fm_white.gif') no-repeat 9px 9px;
+}
+
+/*！！！！！！！！！！4 buy div 布局样式 ！！！！！！！！！！*/
+
+/*头部容器样式*/
+.header4{
+    height: 44px;
+    border-bottom: 1px solid #E9e9e9;
+    font-size: 14px;
+    line-height: 44px;
+    word-spacing: 25px;
+}
+
+.header4 a{
+    color: #222;
+    text-align: center;
+    width: 86px;
+    margin: 0 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    border-bottom: 2px solid #42A0FE;
+}
+/*图片盒子样式*/
+.article4 .imgBox4{
+    width: 594px;
+    height: 265px;
+    overflow: hidden;
+    padding-top: 10px;
+    float: left;
+}
+
+.imgBox4 a{
+    display: inline-block;
+    float: left;
+    width: 177px;
+    height: 133px;
+    margin-left:21px;
+    overflow: hidden;
+    position: relative;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #666;
+}
+
+.imgBox4 a:hover{
+    text-decoration: underline;
+}
+/*内容承载盒子样式*/
+.content4{
+    float: left;
+    height: 245px;
+    margin: 20px 0 10px 0;
+    border-left: 1px solid #e9e9e9;
+}
+
+.content4 a{
+    text-decoration: none;
+    float: left;
+    font-size: 13px;
+    margin-right: 11px;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #222;
+}
+
+.content4 a:hover{
+    text-decoration: underline;
+}
+
+.aside1{
+    border-bottom: 1px solid #e9e9e9;
+    height: 62px;
+    width: 178px;
+    margin: 0 20px;
+    padding-bottom: 18px;
+    text-align: left;
+}
+
+.aside2{
+    width: 178px;
+    margin: 0 20px;
+    text-align: left;
+}
+/*黑色样式超链接*/
+.aBlack{
+    width: 148px;
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 16px;
+}
+/*蓝色样式超链接*/
+.aBlue{
+    color: #38f !important;
+    font-size: 12px;
+    line-height: 28px;
+}
+
+/*！！！！！！！！！！5 vedio div 布局样式 ！！！！！！！！！！*/
+
+/*头部容器样式*/
+.header5{
+    height: 44px;
+    border-bottom: 1px solid #E9e9e9;
+    font-size: 14px;
+    line-height: 44px;
+    word-spacing: 25px;
+}
+
+.header5 a{
+    color: #222;
+    width: 86px;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 15px;
+    display: inline-block;
+    font-weight: bold;
+}
+/*菜单选项选中后效果*/
+.activeOn{
+    border-bottom: 2px solid #42A0FE;
+}
+/*页面主体article样式*/
+.article5{
+    width: 813px;
+    height: 270px;
+    position: relative;
+    padding: 20px 0 0 20px;
+    display: none;
+}
+/*article显示状态类*/
+.articleOn{
+    display: block;
+}
+
+.imgBox5{
+    float: left;
+}
+/*内容样式*/
+.content5{
+    width: 252px;
+    float: left;
+    padding-left: 20px;
+    text-align: left;
+    font-size: 12px;
+    margin-top: -6px;
+}
+
+.content5 a{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    overflow: hidden;
+    color: #222;
+    cursor: pointer;
+    height: 28px;
+    line-height: 28px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.content5 a:hover{
+    color: #0079f5;
+    text-decoration: underline;
+}
+
+.content5 span{
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    background: #8db9f5;
+    text-align: center;
+    display: inline-block;
+    margin-right: 5px;
+    color: white;
+}
+
+.content5 em{
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #ff6c00;
+    right: 2px;
+    float: right;
+    line-height: 28px;
+}
+/*颜色标志样式*/
+.spanRed{
+    background: #f54545 !important;
+}
+
+.spanPink{
+    background: #fe8547 !important;
+}
+
+.spanYellow{
+    background: #ffac38 !important;
+}
